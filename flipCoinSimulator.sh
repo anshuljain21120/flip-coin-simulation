@@ -10,5 +10,13 @@ function flip_a_coin()
 		echo "Tail";
 	fi
 }
+function keep_tossing()
+{
+	local limit=${1:-10};
+	for (( counter=1; counter<=limit; counter++ ))
+	do
+		echo "$( flip_a_coin )";
+	done
+}
 
-echo "$( flip_a_coin )";
+echo "$( keep_tossing )";
